@@ -1,0 +1,18 @@
+.homePage-container{
+    padding: 50px;
+    width: 100%;
+}
+
+.search-card{
+    margin-bottom: 50px;
+}
+
+.weather-card{
+    width: 80%;
+}
+
+.info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -20,7 +20,7 @@ function App() {
         theme="light"
       />
       <ToastContainer />
-      return <Router />
+      <Router />
     </div>
   );
 }
