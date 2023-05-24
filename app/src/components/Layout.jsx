@@ -3,7 +3,7 @@ import { useEffect, useState, createContext } from "react";
 export const DegreeContext = createContext();
 
 export const Layout = ({ children }) => {
-  const [degreeType, setDegreeType] = useState("");
+  const [degreeType, setDegreeType] = useState("celsius");
 
   return (
     <DegreeContext.Provider value={{ degreeType, setDegreeType }}>
@@ -17,7 +17,17 @@ export const Layout = ({ children }) => {
         }}
       >
         <header className="text-3xl"></header>
-        <main>{children}</main>
+        <main
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {children}
+        </main>
         <footer></footer>
       </div>
     </DegreeContext.Provider>

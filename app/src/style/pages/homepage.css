@@ -1,6 +1,10 @@
 .homePage-container{
     padding: 50px;
     width: 100%;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 .search-card{
@@ -14,5 +18,8 @@
 .info-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+.temps-container{
+    width: 30%;
 }
