@@ -29,10 +29,11 @@ export const WeatherDisplay = ({ cityInfo, degreeType }) => {
             style={{
               marginRight: "5px",
             }}
+            className="text-2xl"
           >
             {cityInfo.name}
           </Title>
-          <Text>({cityInfo.weather[0].description})</Text>
+          <Text className="text-2xl">({cityInfo.weather[0].description})</Text>
         </div>
         <br />
         <Bold className="text-2xl">Info : </Bold>
@@ -52,10 +53,10 @@ export const WeatherDisplay = ({ cityInfo, degreeType }) => {
             }}
           >
             <ul>
-              <li>Température : {cityInfo?.main.temp}</li>
-              <li>Ressenti :{cityInfo?.main.feels_like}</li>
-              <li>Minimum : {cityInfo?.main.temp_min}</li>
-              <li>Maximum : {cityInfo?.main.temp_max}</li>
+              <li>Température : {cityInfo?.main.temp}°</li>
+              <li>Ressenti : {cityInfo?.main.feels_like}°</li>
+              <li>Minimum : {cityInfo?.main.temp_min}°</li>
+              <li>Maximum : {cityInfo?.main.temp_max}°</li>
               <li>Humidité : {cityInfo?.main.humidity} %</li>
             </ul>
           </div>

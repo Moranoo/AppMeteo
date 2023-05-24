@@ -13,28 +13,15 @@ export const HomePage = () => {
   const [language, setLanguage] = useState("fr");
   const [cityInfo, setCityInfo] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [units, setUnits] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [notFound, setNotFound] = useState(false);
 
   const debouncedSetCity = useCallback(
     debounce((value) => setCity(value), 1000),
-    [] // empty dependencies array ensures this is only run once
+    []
   );
 
   const { degreeType, setDegreeType } = useContext(DegreeContext);
-
-  useEffect(() => {
-    return () => {
-      if (degreeType === "celsius") {
-        setUnits("metric");
-      } else if (degreeType === "fahrenheit") {
-        setUnits("imperial");
-      } else if (degreeType === "kelvin") {
-        setUnits("standard");
-      }
-    };
-  }, []);
 
   useEffect(() => {
     console.log(city);
@@ -43,7 +30,7 @@ export const HomePage = () => {
       setIsLoading(true);
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&lang=${language}&appid=${process.env.REACT_APP_API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${degreeType}&lang=${language}&appid=${process.env.REACT_APP_API_KEY}`
         )
         .then((response) => {
           setNotFound(false);
@@ -62,7 +49,7 @@ export const HomePage = () => {
           }
         });
     }
-  }, [city]);
+  }, [city, degreeType]);
 
   useEffect(() => {
     return () => {
