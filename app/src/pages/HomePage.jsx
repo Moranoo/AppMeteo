@@ -77,7 +77,7 @@ export const HomePage = () => {
             <Title>Recherchez une ville</Title>
             <TextInput
               icon={RxMagnifyingGlass}
-              placeholder="Paris"
+              placeholder="Recherchez votre ville préféré"
               onChange={(e) => {
                 handleChange(e);
               }}
